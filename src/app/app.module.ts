@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { BooksComponent } from './books/books.component';
 import { FilmComponent } from './film/film.component';
 import { ContactComponent } from './contact/contact.component';
+import { BookModalComponent } from './book-modal/book-modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactComponent } from './contact/contact.component';
     AboutComponent,
     BooksComponent,
     FilmComponent,
-    ContactComponent
+    ContactComponent,
+    BookModalComponent
   ],
   imports: [
     BrowserModule,
