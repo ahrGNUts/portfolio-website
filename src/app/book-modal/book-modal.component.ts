@@ -8,7 +8,7 @@ import { Book } from '../models/book.model';
   styleUrls: ['./book-modal.component.css']
 })
 export class BookModalComponent implements OnInit {
-  book: Book = new Book('No title', 'No synopsis', 'No path');
+  book: Book = new Book('No title', 'No synopsis', '');
 
   constructor(private modalService: ModalService) { }
 
