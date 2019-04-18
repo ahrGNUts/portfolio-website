@@ -21,12 +21,19 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     $(document).ready(() => {
       const $message = $('#message');
+      const $submit = $('#contactSubmit');
+      const $charCounter = $('#charCounter');
       let charCount = 0;
 
       $message.on('input', () => {
         charCount = $message.val().length;
-        $('#charCounter').html(charCount + '/2000');
+        $charCounter.html(charCount + '/2000');
       });
+
+      $submit.on('click', () => {
+        charCount = 0;
+        $charCounter.html(charCount + '/2000');
+    });
     });
   }
 

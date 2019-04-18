@@ -44,7 +44,11 @@
           <span id="charCounter">0/2000</span>
           <span class="help-block" *ngIf="!message.valid && message.touched">Please enter your message.</span>
         </div>
-        <button class="btn btn-default" type="submit">Submit</button>
+        <button
+          id="contactSubmit"
+          class="btn btn-default"
+          [disabled]="!f.valid"
+          type="submit">Submit</button>
       </form>
     </div>
   </div>
