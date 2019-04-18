@@ -1,0 +1,9 @@
+img {
+  cursor: pointer;
+  display: inherit;
+  margin: 0 auto;
+}
+
+.img-container {
+  margin-top: 10px;
+}

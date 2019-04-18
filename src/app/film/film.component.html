@@ -1,3 +1,14 @@
-<p>
-  film works!
-</p>
+<div class="container">
+  <div class="row">
+    <div
+      class="col-md-3 col-sm-6 col-xs-12 img-container"
+      *ngFor="let film of films">
+      <img
+        src={{film.thumbnailPath}}
+        alt={{film.synopsis}}
+        data-target="#filmModal"
+        data-toggle="modal"
+        (click)="filmSelected(film)">
+    </div>
+  </div>
+</div>
