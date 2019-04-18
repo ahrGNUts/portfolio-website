@@ -12,6 +12,7 @@ import { FilmComponent } from './film/film.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookModalComponent } from './book-modal/book-modal.component';
 import { FilmModalComponent } from './film-modal/film-modal.component';
+import { ConnectionService } from './services/connection.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { FilmModalComponent } from './film-modal/film-modal.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
