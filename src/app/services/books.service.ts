@@ -1,7 +1,7 @@
 import { Book } from '../models/book.model';
 
 export class BooksService {
-  private prePath = '../../assets/images/';
+  private prePath = '../../assets/images/books/';
 
   private books: Book[] = [
     new Book('Book 1', 'The first of the series', this.prePath + 'book1.jpg'),
