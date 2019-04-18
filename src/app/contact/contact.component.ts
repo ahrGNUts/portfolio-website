@@ -21,7 +21,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     $(document).ready(() => {
       let $message = $('#message');
-      var charCount = 0;
+      let charCount = 0;
 
       $message.on('input', () => {
         charCount = $message.val().length;
