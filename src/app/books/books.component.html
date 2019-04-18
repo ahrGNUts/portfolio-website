@@ -1,8 +1,7 @@
 <div class="container">
   <div class="row">
-    <!--TODO: better responsive layout for books-->
     <div
-      class="col-md-3 img-container"
+      class="col-md-3 col-sm-6 col-xs-12 img-container"
       *ngFor="let book of books">
       <img
         src={{book.thumbnailPath}}
@@ -10,7 +9,6 @@
         data-target="#bookModal"
         data-toggle="modal"
         (click)="bookSelected(book)">
-
     </div>
   </div>
 </div>
