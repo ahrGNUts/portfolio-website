@@ -40,6 +40,7 @@
             maxlength="2000"
             #message="ngModel">
           </textarea>
+          <span id="charCounter">0/2000</span>
           <span class="help-block" *ngIf="!message.valid && message.touched">Please enter your message.</span>
         </div>
         <button class="btn btn-default" type="submit">Submit</button>
