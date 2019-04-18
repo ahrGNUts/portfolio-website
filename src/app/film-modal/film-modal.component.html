@@ -1,0 +1,23 @@
+<div class="modal fade" id="filmModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">{{film.title}}</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-6">
+              <img src="{{film.thumbnailPath}}">
+          </div>
+          <div class="col-sm-5 col-sm-offset-0">
+            <p>{{film.synopsis}}</p>
+          </div>
+          <div class="col-sm-5 col-sm-offset-0">
+            <p>Read more about it on <a href="{{film.imdbLink}}">IMDB</a></p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

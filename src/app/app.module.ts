@@ -10,6 +10,7 @@ import { BooksComponent } from './books/books.component';
 import { FilmComponent } from './film/film.component';
 import { ContactComponent } from './contact/contact.component';
 import { BookModalComponent } from './book-modal/book-modal.component';
+import { FilmModalComponent } from './film-modal/film-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookModalComponent } from './book-modal/book-modal.component';
     BooksComponent,
     FilmComponent,
     ContactComponent,
-    BookModalComponent
+    BookModalComponent,
+    FilmModalComponent
   ],
   imports: [
     BrowserModule,
