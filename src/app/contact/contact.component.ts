@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-contact',
@@ -6,6 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  @ViewChild('f') contactForm: NgForm;
+
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
 
   constructor() { }
 
@@ -19,6 +28,10 @@ export class ContactComponent implements OnInit {
         $('#charCounter').html(charCount + '/2000');
       });
     });
+  }
+
+  onSubmit(form: NgForm) {
+
   }
 
 }
