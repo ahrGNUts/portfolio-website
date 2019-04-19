@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import * as $ from 'jquery';
+import { ConnectionService } from '../services/connection.service';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +17,7 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  constructor() { }
+  constructor(private connService: ConnectionService) { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -33,12 +34,27 @@ export class ContactComponent implements OnInit {
       $submit.on('click', () => {
         charCount = 0;
         $charCounter.html(charCount + '/2000');
-    });
+      });
     });
   }
 
-  onSubmit(form: NgForm) {
+  onSubmit() {
+    this.formData.name = this.contactForm.value.name;
+    this.formData.email = this.contactForm.value.email;
+    this.formData.message = this.contactForm.value.message;
+    this.contactForm.reset();
 
+    this.connService.sendMessageData(this.formData)
+      .subscribe(
+        (data) => {
+          console.log(data);
+          // TODO: confirmation that the message was successfully sent
+        },
+        (error) => {
+          console.log('error: ' + error);
+          // TODO: some kind of error message displayed on the frontend
+        }
+      );
   }
 
 }

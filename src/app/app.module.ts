@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { BookModalComponent } from './book-modal/book-modal.component';
 import { FilmModalComponent } from './film-modal/film-modal.component';
 import { ConnectionService } from './services/connection.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ConnectionService } from './services/connection.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
