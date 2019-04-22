@@ -17,7 +17,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 0,
         display: 'none'
       })),
-      transition('show <=> hidden', [animate(1000)]),
+      transition('* <=> *', [animate(500)])
     ])
   ]
 })
@@ -38,7 +38,6 @@ export class AlertComponent implements OnInit, OnDestroy {
 
           setTimeout(() => {
             this.alertStatus = 'hide';
-            this.alert = '';
           }, 2000);
         }
       );
