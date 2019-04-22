@@ -53,7 +53,7 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.log(error);
-      res.end('An error was encountered trying to send your email. Please try again later');
+      res.end('error');
     } else {
       console.log('Message sent: ' + response);
       res.end('sent');
