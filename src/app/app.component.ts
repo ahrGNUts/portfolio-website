@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from './services/modal.service';
+import { AlertService } from './services/alert.service';
 
 declare var $: any;
 
@@ -7,7 +8,7 @@ declare var $: any;
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [ModalService]
+  providers: [ModalService, AlertService]
 })
 export class AppComponent {
   title = 'portfolio-site';

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import * as $ from 'jquery';
 import { ConnectionService } from '../services/connection.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +11,7 @@ import { ConnectionService } from '../services/connection.service';
 })
 export class ContactComponent implements OnInit {
   @ViewChild('f') contactForm: NgForm;
+  messageType = 'empty';
 
   formData = {
     name: '',
@@ -17,7 +19,8 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  constructor(private connService: ConnectionService) { }
+  constructor(private connService: ConnectionService,
+              private alertService: AlertService) { }
 
   ngOnInit() {
     $(document).ready(() => {
@@ -48,11 +51,14 @@ export class ContactComponent implements OnInit {
       .subscribe(
         (data) => {
           console.log(data);
-          // TODO: confirmation that the message was successfully sent
+          this.alertService.onStatusChanged(data);
+          console.log('sent triggered');
         },
         (error) => {
-          console.log('error: ' + error);
-          // TODO: some kind of error message displayed on the frontend
+          console.log('error:');
+          console.log(error);
+          console.log('error triggered');
+          this.alertService.onStatusChanged(error);
         }
       );
   }
